@@ -17,8 +17,8 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="overflow-auto w-full h-screen">
-            <div className="absolute -z-10 h-96 w-full">
+        <div className="flex flex-col items-center overflow-auto w-full h-screen">
+            <div className="absolute -z-10 h-96 w-full max-w-screen-md">
                 <Image priority={true} fill={true} objectFit="cover" className="overflow-hidden" src={'/q8aeYHIjZ2M.jpg'} alt="banner" />
             </div>
             
