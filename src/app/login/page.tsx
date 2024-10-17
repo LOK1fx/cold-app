@@ -1,11 +1,21 @@
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 
 
 export default function LoginPage() {
+    const [name, setName] = useState('');
+
+    const onRegBtn = () => {
+        sessionStorage.setItem('name', name);
+    }
+
     return (
         <div className="overflow-auto w-full h-screen">
             <div className="absolute -z-10 h-96 w-full">
@@ -26,14 +36,17 @@ export default function LoginPage() {
                             <h1 className="font-black text-2xl">{"Регистрация"}</h1>
 
                             <div className="flex flex-col justify-center gap-2 w-full h-full px-2">
-                                <Input placeholder="Имя" />
+                                <Input onChange={e => setName(e.target.value)} placeholder="Имя" />
                                 <Input type='tel' placeholder="Номер телефона" />
                                 <div className="flex items-center gap-2 px-2 h-8">
                                     <Checkbox id="terms" />
                                     <p className="text-sm opacity-80">Я согласен с <span className="text-blue-600">тем-то тем-то</span></p>
                                 </div>
 
-                                <Button className="h-12">Зарегистрироваться</Button>
+                                <Link href={'/'} className="self-center">
+                                    <Button onClick={onRegBtn} className="h-12 w-full">Зарегистрироваться</Button>
+                                </Link>
+                                
 
                                 <p className="text-sm text-center">Или <span className="text-blue-600">{"у меня уже есть аккаунт (войти)"}</span></p>
                             </div> 
