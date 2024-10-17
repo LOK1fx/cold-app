@@ -37,8 +37,8 @@ export const Clock = () => {
 
     function getTime(): TimeLeft {
         let timeLeft: TimeLeft = {};
-        let currentDate = new Date();
-        let difference = deadline.getTime() - currentDate.getTime();
+        const currentDate = new Date();
+        const difference = deadline.getTime() - currentDate.getTime();
 
         if (difference > 0) {
             timeLeft = {
