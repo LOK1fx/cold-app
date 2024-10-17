@@ -5,7 +5,7 @@
 import { Clock } from "@/components/shared/clock/clock";
 import { Maraphon } from "@/components/shared/maraphon";
 import { Button } from "@/components/ui/button";
-import { Check, Mail, MessageCircle } from "lucide-react";
+import { Check, Dot, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -65,6 +65,9 @@ export default function Home() {
         {/* часики */}
         <Clock />
 
+        <Link href={'https://marafonoymyakon.ru/page48343283.html'}>
+          <Button>Хочу участвовать</Button>
+        </Link>
       </div>
       
 
@@ -103,7 +106,26 @@ export default function Home() {
           <Maraphon imgSource={'/image_2.png'} title="СУПЕРМАРАФОН" firstGroupCount={40} secondGroupCount={40} />
         </div>
         
+        <p className="font-bold mt-10">Организаторы</p>
+        <div className="flex flex-col gap-2 opacity-70">
+          <Sponsor text={'ООО "МАРАФОНЫ ЯКУТИИ"'} />
+          <Sponsor text={'Общественная организация по развитию зимнего экстремального марафона в туристической индустрии "Полюс Холода" Республики Саха (Якутия).'} />
+          <Sponsor text={'МР «Оймяконский» улус (район) Республики Саха (Якутия).'} />
+          <Sponsor text={'Генеральный спонсор марафона: BASK – ведущий российский производитель снаряжения для экстремальных видов спорта – информационная и материальная поддержка реализации проекта.'} />
+        </div>
       </div>
     </div>
   );
+}
+
+interface SponsorProps {
+  text: string;
+}
+
+const Sponsor = (props: SponsorProps) => {
+  return (
+    <div className="flex flex-row items-center">
+            <Dot /><p>{props.text}</p>
+    </div>
+  )
 }

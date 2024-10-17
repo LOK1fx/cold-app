@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "Полюсь Холода",
-        short_name: 'Полюсь Холода',
+        name: "Полюс Холода",
+        short_name: 'Полюс Холода',
         description: "Регистрация на марафон",
         start_url: '/',
         display: 'standalone',
