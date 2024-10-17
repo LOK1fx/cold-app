@@ -9,15 +9,13 @@ export default function manifest(): MetadataRoute.Manifest {
         display: 'standalone',
         icons: [
             {
-                src: '/icons/icon.jpg',
+                src: '/icons/icon.svg',
                 sizes: "192x192",
-                type: 'image/jpg',
             },
             {
-                src: '/icons/icon.jpg',
-                sizes: "512x512",
-                type: 'image/jpg',
-            }
+                src: '/icons/icon.svg',
+                sizes: "any",
+            },
         ],
     }
 }
